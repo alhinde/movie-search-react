@@ -26,7 +26,7 @@ class App extends Component {
 
     render() {
         var movies =_.map(this.state.movies, (movie) => {
-            return <a containerElement={<Link to="/search"/>}><li>{movie.Title}</li></a>
+            return <Link to={`search/:result`}><li>{movie.Title}</li></Link>
         });
         return (
             <div>

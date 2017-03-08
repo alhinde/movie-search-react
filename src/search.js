@@ -10,6 +10,7 @@ class Search extends React.Component {
         return (
             <div>
                 <h1>Movie Title</h1>
+
             </div>
         )
 

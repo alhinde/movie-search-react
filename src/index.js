@@ -10,7 +10,8 @@ ReactDOM.render((
     <MuiThemeProvider>
             <Router history={browserHistory}>
                 <Route path="/" component={App}>
-                    <Route path="to/page(/:search)" component={Search} />
+                    <Route path="search" component={Search} />
+                    <Route path="to/page(search/:result)" component={Search} />
                 </Route>
             </Router>
     </MuiThemeProvider>
