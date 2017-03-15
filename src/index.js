@@ -10,9 +10,8 @@ ReactDOM.render((
     <MuiThemeProvider>
             <Router history={browserHistory}>
                 <Route path="/" component={App}>
-                    <Route path="search" component={Search} />
-                    <Route path="to/page(search/:result)" component={Search} />
                 </Route>
+                <Route path="search/:result" component={Search} />
             </Router>
     </MuiThemeProvider>
 ), document.getElementById('root'))

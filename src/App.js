@@ -3,7 +3,6 @@ import AppBar from 'material-ui/AppBar';
 import TextField from 'material-ui/TextField';
 import './App.css';
 import 'core-js';
-import Search from './search';
 import {Link} from 'react-router';
 import Request from 'superagent';
 import _ from 'lodash';
@@ -26,19 +25,24 @@ class App extends Component {
 
     render() {
         var movies =_.map(this.state.movies, (movie) => {
-            return <Link to={`search/:result`}><li>{movie.Title}</li></Link>
+            return <Link to={`/search/`+ movie.Title} style={{
+                textDecoration: 'none',
+            }}>
+                <li id="movieList">{movie.Title}</li></Link>
         });
         return (
             <div>
               <AppBar title="Movie Search" iconClassNameRight="muidocs-icon-navigation-expand-more"></AppBar>
               <div className="App">
                   <TextField hintText="Search movie" ref={(input) => {this.title = input;}} onChange={ () => {this.updateApiCall();}} fullWidth={true}/>
-                  <ul>{movies}</ul>
+                  <div class="link"><ul>{movies}</ul></div>
                   {this.props.children}
               </div>
             </div>
         )
       }
+
+
 
     apiCall(title) {
         const url = 'http://www.omdbapi.com/?s=' + title + "*";
@@ -48,6 +52,8 @@ class App extends Component {
             });
         });
     };
+
+
 }
 
 export default App;
