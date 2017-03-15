@@ -14,17 +14,18 @@
   color: white;
 }
 
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 li {
   list-style-type: none;
   font-family: Century Gothic, sans-serif;
 }
 
+h1,h2,h3,p {
+  font-family: Century Gothic, sans-serif;
+
+}
+
+
+h4 {
+    font-family: Century Gothic, sans-serif;
+    color:white;
+}
